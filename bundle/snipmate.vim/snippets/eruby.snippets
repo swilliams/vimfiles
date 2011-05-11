@@ -1,0 +1,123 @@
+# unless
+snippet unless
+	<% unless ${1} %>
+		${2}
+	<% end %>
+
+# if
+snippet if Main If
+	<% if ${1:condition} %>
+		${2}
+	<% end %>
+
+# if else
+snippet if If/Else
+	<% if ${1} %>
+		${2}
+	<% else %>
+	<% end %>
+
+# jit
+snippet jit
+	<%= javascript_include_tag "${1}" %>
+
+# submit tag
+snippet st
+	<%= submit_tag "<+Save changes+>"<+, :id => "<+submit+>"+><+, :name => "<+submit+>"+><+, :class => "<+form_name+>"+><+, :disabled => <+false+>+><+, :disable_with => "<+Please wait+>"+> %>
+
+# collection select
+snippet cs
+	<%= collection_select <+object+>, <+method+>, <+collection+>, <+value_method+>, <+text_method+><+, <+[options]+>, <+[html_options]+>+> %>
+
+# end
+snippet end
+	<% end %>
+
+# ff
+snippet ff Default form for
+	<% form_for @${1:model} do |f| %>
+		${2}
+	<% end %>
+
+# checkbox
+snippet ffcb
+	<%= ${1:f}.check_box :${2:attribute} %>
+
+# form error messages
+snippet ffe
+	<%= f.error_messages %>
+
+# form file_field
+snippet ffff
+	<%= ${1:f}.file_field :${2:attribute} %>
+
+# hidden field
+snippet ffhf
+	<%= ${1:f}.hidden_field :${2:attribute} %>
+
+# label
+snippet ffl
+	<%= ${1:f}.label :${2:attribute}, '${3:$2}' %>
+
+# password field
+snippet ffpf
+	<%= ${1:f}.password_field :${2:attribute} %>
+
+# radio button
+snippet ffrb
+	<%= ${1:f}.radio_button :${2:attribute}, :${3:tag_value} %>
+
+# submit button
+snippet ffs
+	<%= ${1:f}.submit "${2:submit}" %>
+
+# text area
+snippet ffta
+	<%= ${1:f}.text_area :${2:attribute} %>
+
+# text field
+snippet fftf
+	<%= ${1:f}.text_field :${2:attribute} %>
+
+# fields for
+snippet fields
+	<% fields_for :${1:model}, @$1 do |${2:f}| %>
+		${3} 
+	<% end %>
+
+# for
+snippet for
+	<% for ${2:item} in ${1:list} %>
+		${3}
+	<% end %>
+
+# link to
+snippet lt link_to "Desc", :action => "action"
+	<%= link_to "${1:link text}", :action => "${2:index}" %>	
+ 	
+# link to
+snippet lt link_to "Desc", path
+	<%= link_to "${1:name}", ${2:dest} %>
+
+# link to
+snippet lt link_to "Desc", :controller => "", :action => ""
+	<%= link_to "${1:link text}", :controller => "${2:items}", :action => "${3:index}" %>
+
+# slt
+snippet slt
+	<%= stylesheet_link_tag "${1}" %>
+
+# rp
+snippet rp
+	<%= render :partial => "${1:file}"${2} %>
+
+# content for
+snippet conf
+	<% content_for :${1:yield_label_in_layout} do %>
+		${2}
+	<% end %>
+
+# link to path
+snippet lit
+	<%= link_to <+"<+link text+>"+>, <+<+model+>_path(<+@+><+instance+>)+> %>
+
